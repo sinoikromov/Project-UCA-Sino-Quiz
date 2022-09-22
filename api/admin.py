@@ -1,3 +1,57 @@
-from django.contrib import admin
+from django.db import models
 
+from django.contrib import admin
+from quiz import models
+
+
+@admin.register(models.Category)
+class CatAdmin(admin.ModelAdmin):
+    list_display = [
+        'name',
+    ]
+
+
+@admin.register(models.Quiz)
+class QuizAdmin(admin.ModelAdmin):
+    list_display = [
+        'id',
+        'title',
+    ]
+
+
+class AnswerInlineModel(admin.TabularInline):
+    model = models.Answer
+    fields = [
+        'answer_text',
+        'is_right',
+    ]
+
+
+@admin.register(models.Question)
+class QuestionAdmin(admin.ModelAdmin):
+    fields = [
+        'title',
+        'quiz',
+        'difficulty',
+    ]
+    list_display = [
+        'title',
+        'quiz',
+        'date_updated',
+        'difficulty',
+
+
+    ]
+    inlines = [
+        AnswerInlineModel,
+    ]
+
+
+@admin.register(models.Answer)
+class AnswerAdmin(admin.ModelAdmin):
+    list_display = [
+        'answer_text',
+        'is_right',
+        'question'
+    ]
 

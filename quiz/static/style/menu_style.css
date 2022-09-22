@@ -1,0 +1,28 @@
+
+body {
+    color: #808285;
+    background: #0B1315;
+    font-style: normal;s
+}
+
+.card{
+    color: #BE9C6E;
+    font-family: "Roboto Slab", Sans-serif;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 0.8em;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    padding: 50px 50px;
+    background: #0B1315;
+}
+
+
+
+
+
+.category_card{
+	border: 100px;
+	padding: 30px;
+}

@@ -7,4 +7,5 @@ app_name = 'quiz'
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls', namespace='api')),
+    path('', include('quiz.urls', namespace='quiz')),
 ]

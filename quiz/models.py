@@ -15,6 +15,7 @@ class Quiz(models.Model):
     title = models.CharField(max_length=255, default='New Quiz', verbose_name='Quiz Title')
     created_at = models.DateTimeField(auto_now_add=True)
 
+
     def __str__(self):
         return self.title
 

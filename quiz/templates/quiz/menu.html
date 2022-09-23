@@ -8,8 +8,8 @@
 <div class="category_card">
     {% for item in lists %}
    <div class="d-grid gap-2 col-6 mx-auto">
-     <a href=""></a>
-  <button class="btn btn-primary" type="button">{{item.title}}</button>
+
+  <a class="btn btn-primary" href="{{ get_absolute_url }}" role="button">{{ item.name}}</a>
 
 </div>
 </div>

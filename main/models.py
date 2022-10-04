@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -39,3 +40,11 @@ class Question(models.Model):
         verbose_name = 'Question'
         verbose_name_plural = 'Questions'
 
+
+class UserSubmittedAnswer(models.Model):
+    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    right_answer = models.CharField(max_length=200)
+
+    class Meta:
+        verbose_name_plural = 'User Submitted Answer'

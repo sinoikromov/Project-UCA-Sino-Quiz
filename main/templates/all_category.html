@@ -1,10 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
 
-</body>
-</html>
+{% block title %} Category Quiz {% endblock  %}
+{% block content %}
+  <h3 class="my-4">All category</h3>
+
+<div class="row">
+    {% for item in category %}
+    <div class="col-md-4 border-dark shadow my-2">
+        <div class="card my-4"></div>
+        <img src="{{ item.image.url }}" class="card-img-top" alt="{{ item.title }}" width="200" height="200">
+        <div class="card-body my-3">
+            <h5 class="card-title my-2">{{ item.title }}</h5>
+            <a href="{% url 'category_question' item.pk %}" class="btn btn-primary">Go</a>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock  %}
